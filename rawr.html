@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autobiography — Alexander John Estudillo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#e7f1ff;
+      --card:#ffffff;
+      --accent:#3b82f6;
+      --muted:#4b5d7a;
+      --radius:20px;
+      --shadow:0 8px 30px rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#cfe8ff,#f6faff);
+      color:#123;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:24px; /* give breathing room so corners don't get cut on mobile */
+    }/* main wrapper */
+.container{
+  width:1000px;
+  max-width:100%;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:300px 1fr;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn {from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:translateY(0)}}
+
+/* sidebar */
+.sidebar{
+  background:linear-gradient(180deg,#3b82f6,#2563eb);
+  color:#fff;
+  padding:36px 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+.avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:4px solid #fff;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#60a5fa,#93c5fd);font-size:30px;font-weight:700;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+.name{font-weight:700;font-size:18px;text-align:center}
+.meta{font-size:13px;opacity:0.9;text-align:center;line-height:1.2}
+
+nav{margin-top:6px;width:100%;display:flex;flex-direction:column;gap:8px}
+.nav-btn{display:block;width:100%;background:rgba(255,255,255,0.08);border:0;color:#fff;padding:10px;border-radius:10px;cursor:pointer;font-weight:600;transition:all .16s}
+.nav-btn:hover{transform:translateX(6px);background:rgba(255,255,255,0.15)}
+.nav-btn.active{background:#fff;color:#2563eb}
+
+/* content column - important: min-width:0 to allow flex children to wrap on small screens */
+.content{padding:36px;min-height:480px;background:linear-gradient(180deg,#ffffff,#f1f5fb);min-width:0}
+
+.page{display:none}
+.page.active{display:block}
+
+.headline h1{margin:0;font-size:34px;color:var(--accent);font-weight:700}
+.headline p{margin:8px 0 18px;color:var(--muted)}
+
+.card{background:var(--card);border-radius:14px;padding:20px;margin-top:18px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+
+/* INFO LIST: use grid with minmax(0,1fr) to avoid overflow (min-width 0 fixes flex overflow issues) */
+.info-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:12px;align-items:start}
+.info-item{min-width:0}
+.info-item b{color:var(--accent);display:block;margin-bottom:6px}
+
+/* small icons next to labels */
+.label-row{display:flex;gap:10px;align-items:center}
+.icon{width:36px;height:36px;border-radius:8px;display:inline-grid;place-items:center;background:linear-gradient(135deg,#e6f0ff,#f6fbff);color:var(--accent);font-weight:700}
+
+.likes{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.pill{padding:10px 14px;border-radius:999px;background:linear-gradient(135deg,#3b82f6,#60a5fa);color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(59,130,246,0.2)}
+
+footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+
+/* responsive tweaks */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr}
+  .sidebar{flex-direction:row;align-items:center;justify-content:space-between;padding:14px 18px}
+  nav{flex-direction:row;gap:8px}
+  .nav-btn{padding:8px 10px}
+  .content{padding:22px}
+  .headline h1{font-size:28px}
+  .info-list{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  body{padding:12px}
+  .avatar{width:88px;height:88px;font-size:20px}
+  .name{font-size:16px}
+  .content{padding:16px}
+  .headline h1{font-size:22px}
+  .info-list{grid-template-columns:1fr}
+  .nav-btn{font-size:13px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="avatar" id="avatar">AJ</div>
+      <div style="text-align:center">
+        <div class="name">Alexander John Estudillo</div>
+        <div class="meta">18 years old • Abuno Pajac, Lapu-Lapu City</div>
+      </div><nav aria-label="Main navigation">
+    <button class="nav-btn active" data-target="home" aria-controls="home">Autobiography</button>
+    <button class="nav-btn" data-target="about" aria-controls="about">About Me</button>
+  </nav>
+</aside>
+
+<section class="content">
+  <div id="home" class="page active">
+    <div class="headline">
+      <h1>Autobiography</h1>
+      <p>A small window into who I am</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px 0">Introduction</h2>
+      <p style="margin:0 0 12px 0;line-height:1.6">Hello, my name is <strong>Alexander John Estudillo</strong>. I'm <strong>18 years old</strong> and I live in <strong>Abuno Pajac, Lapu-Lapu City</strong>. This autobiography is a short glimpse into my story, where I live, and what inspires me.</p>
+
+      <div class="info-list" role="list">
+        <div class="info-item" role="listitem">
+          <div class="label-row"><div class="icon">👤</div><div><b>Full Name</b></div></div>
+          <div>Alexander John Estudillo</div>
+        </div>
+
+        <div class="info-item" role="listitem">
+          <div class="label-row"><div class="icon">🎂</div><div><b>Age</b></div></div>
+          <div>18 years old</div>
+        </div>
+
+        <div class="info-item" role="listitem">
+          <div class="label-row"><div class="icon">📍</div><div><b>Location</b></div></div>
+          <div>Abuno Pajac, Lapu-Lapu City</div>
+        </div>
+
+        <div class="info-item" role="listitem">
+          <div class="label-row"><div class="icon">🎨</div><div><b>Theme</b></div></div>
+          <div>Cozy Blue Vibes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px 0">Short Story</h2>
+      <p style="margin:0;line-height:1.6">I grew up in Lapu-Lapu City, a place full of life and warmth. I enjoy simple things: ramen that comforts me, volleyball that pushes my strength and teamwork, and anime that sparks my imagination. These passions shape who I am and keep me inspired each day.</p>
+    </div>
+  </div>
+
+  <div id="about" class="page">
+    <div class="headline">
+      <h1>About Me</h1>
+      <p>If you want to brighten up my mood, you can talk about my favorite show or eat ramen with me :)</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px 0">My Interests</h2>
+      <div class="likes">
+        <div class="pill">🍜 Ramen</div>
+        <div class="pill">🏐 Volleyball</div>
+        <div class="pill">🎌 Anime</div>
+      </div>
+      <p style="margin-top:14px;line-height:1.6">I grew up with 4 siblings, and me being the youngest sibling. Three of my siblings are now working, while the two of us are still studying. I'm hoping I will be successful in life so I can live comfortably with my family and be financially stable.</p>
+    </div>
+  </div>
+
+  <footer>Made with ❤️ and cozy blue vibes — Alexander</footer>
+</section>
+
+  </div>  <script>
+    // Accessibility-friendly tab-like navigation
+    const buttons = document.querySelectorAll('.nav-btn');
+    const pages = document.querySelectorAll('.page');
+    buttons.forEach(btn => btn.addEventListener('click', ()=>{
+      buttons.forEach(b=>{b.classList.remove('active'); b.setAttribute('aria-pressed','false')});
+      btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+      const target = btn.dataset.target;
+      pages.forEach(p=>{ p.classList.toggle('active', p.id===target) });
+    }));
+
+    // ensure avatar initials show if no image
+    const avatar = document.getElementById('avatar');
+    if(!avatar.style.backgroundImage) avatar.textContent = 'AJ';
+  </script></body>
+</html>
